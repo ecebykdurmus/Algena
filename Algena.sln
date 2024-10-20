@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34723.18
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Algena.Entities", "Algena.Entities\Algena.Entities.csproj", "{0F5DC54D-81FD-4EB5-8E66-6271C22235B6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Algena.Core", "Algena.Core\Algena.Core.csproj", "{21DD57A0-3E32-481C-A14F-2CA8B439FF6D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Algena.DataAccess", "Algena.DataAccess\Algena.DataAccess.csproj", "{5D5B681B-A859-40B3-BCEC-20C9DFAD41CE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Algena.Business", "Algena.Business\Algena.Business.csproj", "{5F6B4824-9506-4829-8427-A7EA9E7C21D4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Algena.WebApi", "Algena.WebApi\Algena.WebApi.csproj", "{1BD41152-A405-437E-B952-AF73A35A0ACA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algena.MinimalApi", "Algena.MinimalApi\Algena.MinimalApi.csproj", "{01C08811-AFCC-4C65-A457-85FB00DB65D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algena.WebUI", "Algena.WebUI\Algena.WebUI.csproj", "{CAA3D05E-3F1A-4E01-BFF2-5CFE8131A451}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0F5DC54D-81FD-4EB5-8E66-6271C22235B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F5DC54D-81FD-4EB5-8E66-6271C22235B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F5DC54D-81FD-4EB5-8E66-6271C22235B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F5DC54D-81FD-4EB5-8E66-6271C22235B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21DD57A0-3E32-481C-A14F-2CA8B439FF6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21DD57A0-3E32-481C-A14F-2CA8B439FF6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21DD57A0-3E32-481C-A14F-2CA8B439FF6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21DD57A0-3E32-481C-A14F-2CA8B439FF6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D5B681B-A859-40B3-BCEC-20C9DFAD41CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D5B681B-A859-40B3-BCEC-20C9DFAD41CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D5B681B-A859-40B3-BCEC-20C9DFAD41CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D5B681B-A859-40B3-BCEC-20C9DFAD41CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F6B4824-9506-4829-8427-A7EA9E7C21D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F6B4824-9506-4829-8427-A7EA9E7C21D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F6B4824-9506-4829-8427-A7EA9E7C21D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F6B4824-9506-4829-8427-A7EA9E7C21D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BD41152-A405-437E-B952-AF73A35A0ACA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BD41152-A405-437E-B952-AF73A35A0ACA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BD41152-A405-437E-B952-AF73A35A0ACA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BD41152-A405-437E-B952-AF73A35A0ACA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01C08811-AFCC-4C65-A457-85FB00DB65D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01C08811-AFCC-4C65-A457-85FB00DB65D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01C08811-AFCC-4C65-A457-85FB00DB65D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01C08811-AFCC-4C65-A457-85FB00DB65D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAA3D05E-3F1A-4E01-BFF2-5CFE8131A451}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAA3D05E-3F1A-4E01-BFF2-5CFE8131A451}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAA3D05E-3F1A-4E01-BFF2-5CFE8131A451}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAA3D05E-3F1A-4E01-BFF2-5CFE8131A451}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7C347963-7443-4A62-90AD-E703B1209D70}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,48 @@
+﻿@model List<CategoryDto>
+
+<link href="~/css/productAdd.css" rel="stylesheet" />
+
+<header>
+
+    <img src="~/images/AlgenaLogo.jpg" alt="Logo" height="200px" width="350px">>
+
+</header>
+
+<div class="card-ekleme">
+
+    <h3 class="title">ÜRÜN EKLEME</h3>
+    <form class="ekleme-frm" asp-action="Add" method="post">
+
+        <label>Kategori :</label>
+        <select name="CategoryId">
+
+            @foreach (CategoryDto categoryDto in Model)
+            {
+                <option value="@categoryDto.Id">
+                    @categoryDto.CategoryName
+                </option>    
+            }
+        </select>
+      
+        <br>
+
+        <label>Ürün Adı :</label>
+        <input type="text" name="ProductName">
+        
+        <br>
+
+        <label>Stok Adeti :</label>
+        <input type="text" name="StockAmount">
+
+        <br>
+        
+        <label>Fiyat :</label>
+        <input type="text" name="Price">
+
+        <br>
+
+        <button type="submit" class="button">Ekle</button>
+
+    </form>
+</div>
+

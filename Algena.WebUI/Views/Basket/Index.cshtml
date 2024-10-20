@@ -1,0 +1,35 @@
+﻿@using Algena.WebUI.BasketTransaction.BasketModels
+@model Basket
+
+@{
+    Layout = null;
+}
+
+@if(ViewBag.Message is not null){
+    <h1>Sipariş Durumu : @ViewBag.Message</h1>
+}
+
+@foreach(BasketItem basketItem in Model.BasketItems)
+{
+    @* <div style="display:flex; flex-direction:column; align-items:center; text-align:center; width:10%;"> *@
+    <div>
+        <h4>@basketItem.ProductName</h4>
+        <h5>@basketItem.CategoryName</h5>
+        <h6>@basketItem.Quantity</h6>
+        <h6>@basketItem.Price</h6>
+        @Html.ActionLink("+","Increase", new {id = basketItem.ProductId});
+        @Html.ActionLink("-", "Decrease", new { id = basketItem.ProductId });
+        @Html.ActionLink("Sepetten Sil", "RemoveItem", new { id = basketItem.ProductId });
+
+    </div>
+}
+
+<div style="background-color:black">
+    <h1 style="color:white">
+        @Model.TotalPrice
+    </h1>
+    <h2>
+        @Html.ActionLink("Sepeti Sil","RemoveBasket");
+    </h2>
+    @Html.ActionLink("Sepeti Onayla","Index","Order");
+</div>
