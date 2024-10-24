@@ -5,31 +5,42 @@
     Layout = null;
 }
 
-@if(ViewBag.Message is not null){
-    <h1>Sipariş Durumu : @ViewBag.Message</h1>
-}
 
-@foreach(BasketItem basketItem in Model.BasketItems)
-{
-    @* <div style="display:flex; flex-direction:column; align-items:center; text-align:center; width:10%;"> *@
-    <div>
-        <h4>@basketItem.ProductName</h4>
-        <h5>@basketItem.CategoryName</h5>
-        <h6>@basketItem.Quantity</h6>
-        <h6>@basketItem.Price</h6>
-        @Html.ActionLink("+","Increase", new {id = basketItem.ProductId});
-        @Html.ActionLink("-", "Decrease", new { id = basketItem.ProductId });
-        @Html.ActionLink("Sepetten Sil", "RemoveItem", new { id = basketItem.ProductId });
+<head>
+    <link rel="stylesheet" href="~/css/Sepet.css" />
+</head>
 
+
+<div class="basket-container">
+    <h1 class="basket-title">Sepetiniz</h1>
+
+    @if (ViewBag.Message is not null)
+    {
+        <h2 class="basket-status">Sipariş Durumu: @ViewBag.Message</h2>
+    }
+
+    <div class="basket-items">
+        @foreach (BasketItem basketItem in Model.BasketItems)
+        {
+            <div class="basket-item">
+                <h3 class="item-name">@basketItem.ProductName</h3>
+                <p class="item-category">@basketItem.CategoryName</p>
+                <p class="item-quantity">Adet: @basketItem.Quantity</p>
+                <p class="item-price">Fiyat: @basketItem.Price TL</p>
+                <div class="item-buttons">
+                    @Html.ActionLink("+", "Increase", new { id = basketItem.ProductId }, new { @class = "btn btn-increase" })
+                    @Html.ActionLink("-", "Decrease", new { id = basketItem.ProductId }, new { @class = "btn btn-decrease" })
+                    @Html.ActionLink("Sepetten Sil", "RemoveItem", new { id = basketItem.ProductId }, new { @class = "btn btn-remove" })
+                </div>
+            </div>
+        }
     </div>
-}
 
-<div style="background-color:black">
-    <h1 style="color:white">
-        @Model.TotalPrice
-    </h1>
-    <h2>
-        @Html.ActionLink("Sepeti Sil","RemoveBasket");
-    </h2>
-    @Html.ActionLink("Sepeti Onayla","Index","Order");
+    <div class="basket-summary">
+        <h2 class="total-price">Toplam Fiyat: @Model.TotalPrice TL</h2>
+        <div class="summary-buttons">
+            @Html.ActionLink("Sepeti Sil", "RemoveBasket", null, new { @class = "btn btn-clear" })
+            @Html.ActionLink("Sepeti Onayla", "Index", "Order", new { @class = "btn btn-confirm" })
+        </div>
+    </div>
 </div>

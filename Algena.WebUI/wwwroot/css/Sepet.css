@@ -1,0 +1,131 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb, #a6c1ee);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 50px;
+}
+
+.basket-container {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 1000px;
+    padding: 30px;
+}
+
+.basket-title {
+    font-size: 2.2rem;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.basket-status {
+    font-size: 1.5rem;
+    color: #e74c3c;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.basket-items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.basket-item {
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+    .basket-item:hover {
+        transform: scale(1.02);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    }
+
+.item-name {
+    font-size: 1.5rem;
+    color: #3498db;
+    margin-bottom: 10px;
+}
+
+.item-category, .item-quantity, .item-price {
+    font-size: 1.2rem;
+    color: #7f8c8d;
+    margin-bottom: 5px;
+}
+
+.item-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.btn {
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    color: white;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-increase {
+    background-color: #2ecc71;
+}
+
+.btn-decrease {
+    background-color: #e67e22;
+}
+
+.btn-remove {
+    background-color: #e74c3c;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.9);
+}
+
+.basket-summary {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.total-price {
+    font-size: 2rem;
+    color: #2c3e50;
+}
+
+.summary-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.btn-clear {
+    background-color: #e74c3c;
+}
+
+.btn-confirm {
+    background-color: #3498db;
+}
+
+    .btn-clear:hover, .btn-confirm:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 15px #ffffff, 0 0 20px #ffffff;
+    }
