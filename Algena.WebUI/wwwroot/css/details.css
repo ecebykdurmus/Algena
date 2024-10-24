@@ -1,4 +1,5 @@
-﻿body {
+﻿/* Genel Yapı Aynı Kalıyor */
+body {
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(to right, #ff9a9e, #fad0c4, #fad0c4, #fbc2eb, #a6c1ee, #fbc2eb, #ff9a9e, #a1c4fd, #c2e9fb, #ffdde1, #ff9a9e);
     background-size: 400% 400%;
@@ -10,81 +11,101 @@
     margin: 0;
 }
 
-
 /* Ürün Detayı Konteyner */
 .product-container {
-    background-color: rgba(255, 255, 255, 0.9); /* Yarı saydam beyaz arka plan */
-    border-radius: 15px;
-    padding: 30px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Hafif gölge */
-    max-width: 500px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(240, 240, 255, 0.8) 100%);
+    padding: 50px;
+    border-radius: 25px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Daha belirgin gölge */
+    max-width: 600px; /* Daha büyük boyut */
     text-align: center;
+    transition: transform 0.3s ease, background 0.5s ease;
 }
+
+    .product-container:hover {
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(230, 240, 250, 0.9) 100%);
+        transform: scale(1.05); /* Hover sırasında büyüme efekti */
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+    }
 
 /* Ürün Başlığı */
 .product-title {
-    font-size: 2.5rem;
-    color: #1e3799; /* Daha koyu bir ton */
-    margin-bottom: 20px;
-}
-
-/* Kategori */
-.product-category {
-    font-size: 1.5rem;
-    color: #6a89cc; /* Pastel tonlarında */
-    margin-bottom: 10px;
-}
-
-/* Fiyat */
-.product-price {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #38ada9; /* Canlı pastel yeşil tonlarında */
+    font-size: 2.8rem;
+    color: #34495e; /* Koyu gri ton */
     margin-bottom: 15px;
+    font-family: 'Cursive', sans-serif; /* Farklı yazı tipi */
+    text-shadow: 2px 2px 6px rgba(0, 162, 255, 0.8); /* Mavi gölge */
+    transition: text-shadow 0.3s ease;
 }
 
-/* Stok Bilgisi */
-.product-stock {
-    font-size: 1.3rem;
-    color: #fa983a; /* Soft turuncu tonları */
-    margin-bottom: 30px;
+    .product-title:hover {
+        text-shadow: 4px 4px 10px rgba(0, 162, 255, 1); /* Hover sırasında daha belirgin mavi gölge */
+    }
+
+/* Kategori ve Diğer Metinler */
+.product-category, .product-price, .product-stock {
+    font-family: 'Verdana', sans-serif; /* Daha resmi yazı tipi */
+    letter-spacing: 1px;
+    color: #34495e;
+    text-shadow: 2px 2px 6px rgba(0, 162, 255, 0.8); /* Mavi gölge */
+    transition: text-shadow 0.3s ease;
 }
+
+    .product-category:hover, .product-price:hover, .product-stock:hover {
+        text-shadow: 4px 4px 10px rgba(0, 162, 255, 1); /* Hover sırasında daha belirgin mavi gölge */
+    }
 
 /* Butonlar */
 .product-buttons {
     display: flex;
     justify-content: space-around;
+    margin-top: 20px;
 }
 
 .btn-update, .btn-delete {
-    padding: 12px 20px;
+    padding: 15px 30px;
     border: none;
-    border-radius: 8px;
+    border-radius: 25px; /* Yuvarlak köşeli butonlar */
     color: white;
-    text-decoration: none;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); /* Hafif gölge */
+    font-size: 1.1rem;
+    text-decoration: none; /* Alt çizgiyi kaldırdık */
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 0 8px 15px rgba(255, 100, 150, 0.3), 0 10px 20px rgba(0, 162, 255, 0.3); /* Renkli geçişli gölge */
 }
 
 .btn-update {
-    background-color: #3c6382; /* Mavi tonlarında */
+    background: linear-gradient(to right, #00c6ff, #0072ff); /* Canlı mavi geçişli buton */
 }
 
 .btn-delete {
-    background-color: #e55039; /* Kırmızı tonlarında */
+    background: linear-gradient(to right, #ff6a00, #ee0979); /* Canlı kırmızı geçişli buton */
 }
 
-/* Hover Efekt */
-.btn-update:hover {
-    background-color: #60a3bc;
-}
+    .btn-update:hover, .btn-delete:hover {
+        transform: scale(1.1); /* Hover sırasında büyüme efekti */
+        box-shadow: 0 10px 20px rgba(255, 100, 150, 0.5), 0 12px 25px rgba(0, 162, 255, 0.5); /* Daha yoğun renkli gölge efekti */
+    }
 
-.btn-delete:hover {
-    background-color: #eb2f06;
-}
+    /* Butonlara Desen Ekleme */
+    .btn-update::before, .btn-delete::before {
+        content: '';
+        position: absolute;
+        top: -100%;
+        left: -100%;
+        width: 300%;
+        height: 300%;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+        transition: all 0.5s ease;
+        z-index: -1;
+    }
 
-
+    .btn-update:hover::before, .btn-delete:hover::before {
+        top: 0;
+        left: 0;
+    }
 
 /* Geçiş animasyonu */
 @keyframes gradient {
