@@ -1,16 +1,20 @@
 ﻿@model List<CategoryDto>
 
-<link href="~/css/productAdd.css" rel="stylesheet" />
+@{
+    Layout = null;
+}
 
+<link href="~/css/eklemeproduct.css" rel="stylesheet" />
+@* 
 <header>
 
     <img src="~/images/AlgenaLogo.jpg" alt="Logo" height="200px" width="350px">>
 
-</header>
+</header> *@
 
 <div class="card-ekleme">
 
-    <h3 class="title">ÜRÜN EKLEME</h3>
+    <h3 class="title">Ürün Ekleme</h3>
     <form class="ekleme-frm" asp-action="Add" method="post">
 
         <label>Kategori :</label>
