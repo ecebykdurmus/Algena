@@ -2,13 +2,22 @@
     Layout = null;
 }
 
-
-
 @model ProductVM
 
-<h1>@Model.ProductName</h1>
-<h2>@Model.CategoryName</h2>
-<h2>@Model.Price</h2> 
-<h2>@Model.StockAmount</h2>
-@Html.ActionLink("Guncelle", "Update", new { id = Model.Id })
-@Html.ActionLink("Sil","Delete", new { id = Model.Id})
+<head>
+    <link rel="stylesheet" href="~/css/details.css" />
+</head>
+
+<div class="product-container">
+    <div class="product-card">
+        <h1 class="product-title">@Model.ProductName</h1>
+        <h2 class="product-category">Kategori: @Model.CategoryName</h2>
+        <p class="product-price">Fiyat: @Model.Price ₺</p>
+        <p class="product-stock">Stok Miktarı: @Model.StockAmount</p>
+
+        <div class="product-buttons">
+            @Html.ActionLink("Güncelle", "Update", new { id = Model.Id }, new { @class = "btn-update" })
+            @Html.ActionLink("Sil", "Delete", new { id = Model.Id }, new { @class = "btn-delete" })
+        </div>
+    </div>
+</div>
