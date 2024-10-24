@@ -34,11 +34,11 @@ body {
 }
 
 .container-1 {
-    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.95); /* Beyaz arka plan */
     border-radius: 15px;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
     width: 280px;
-    height: 380px;
+    height: 400px;
     padding: 20px;
     text-align: center;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
@@ -59,26 +59,34 @@ body {
         border-radius: 10px;
     }
 
-    .container-1 h1 {
-        font-size: 1.6rem;
-        color: #2c3e50;
-        margin-bottom: 10px;
-        transition: color 0.4s ease;
+    .container-1 h1, .container-1 h2, .container-1 h3 {
+        color: black; /* Siyah yazı */
+        text-decoration: none; /* Altı çizili olmaması */
+        transition: color 0.4s ease, text-shadow 0.4s ease;
+        text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.7); /* Beyaz gölgeli yazı */
     }
 
-        .container-1 h1:hover {
-            color: #3498db;
+        .container-1 h1:hover, .container-1 h2:hover, .container-1 h3:hover {
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.9), 0 0 20px rgba(255, 255, 255, 1); /* Üzerine gelince belirgin beyaz gölge */
+            text-decoration: none; /* Hover durumunda da altı çizili olmaması */
         }
+
+    .container-1 h1 {
+        font-size: 1.6rem;
+        margin-bottom: 10px;
+        text-decoration: none; /* Altı çizili olmaması */
+    }
 
     .container-1 h2 {
         font-size: 1.3rem;
-        color: #7f8c8d;
         margin-bottom: 10px;
+        text-decoration: none; /* Altı çizili olmaması */
     }
 
     .container-1 h3 {
         font-size: 1.1rem;
-        color: #e74c3c;
+        margin-bottom: 10px;
+        text-decoration: none; /* Altı çizili olmaması */
     }
 
 .product-buttons {
@@ -86,19 +94,26 @@ body {
     display: flex;
     justify-content: center;
     gap: 20px;
+    position: absolute;
+    bottom: 15px; /* Sepete Ekle butonu alta yerleştirildi */
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .add-to-cart-btn {
-    background-color: #3498db;
+    background-color: #3498db; /* Mavi buton */
     color: white;
     padding: 10px 15px;
     border-radius: 8px;
     text-decoration: none;
     font-size: 0.95rem;
-    transition: background-color 0.4s ease;
+    transition: background-color 0.4s ease, transform 0.4s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Buton gölgelendirme */
 }
 
     .add-to-cart-btn:hover {
-        background-color: #2980b9;
+        background-color: #2980b9; /* Hover durumunda koyu mavi */
         transform: scale(1.1);
+        box-shadow: 0 0 15px #ffffff, 0 0 20px #ffffff; /* Üzerine gelince parlama efekti */
+        text-decoration: none; /* Butonda alt çizgi olmaması */
     }
