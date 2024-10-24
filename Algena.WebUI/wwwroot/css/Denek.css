@@ -12,9 +12,8 @@ body {
     align-items: center;
     background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb, #a6c1ee, #fbc2eb, #ff9a9e, #a1c4fd, #c2e9fb);
     background-size: 400% 400%;
-    animation: gradient 10s ease infinite;
+    animation: gradient 15s ease infinite;
     font-family: 'Poppins', sans-serif;
-    margin: 0;
 }
 
 @keyframes gradient {
@@ -29,13 +28,6 @@ body {
     100% {
         background-position: 0% 50%;
     }
-}
-
-header .logo {
-    display: block;
-    margin: 0 auto;
-    padding-bottom: 20px;
-    max-width: 300px;
 }
 
 /* Form Konteyneri */
@@ -55,25 +47,22 @@ header .logo {
         box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
     }
 
+/* Mavi Gölgelendirme Başlık */
 .title {
-    color: #34495e;
-    font-size: 2rem;
+    font-size: 2.2rem;
+    color: #2c3e50;
+    font-weight: bold;
     margin-bottom: 20px;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    text-shadow: 2px 2px 5px rgba(0, 123, 255, 0.7); /* Mavi gölge */
 }
 
 label {
     color: #34495e;
     font-weight: 500;
     font-size: 1.1rem;
-    margin-bottom: 5px;
-    text-align: left;
+    margin-bottom: 10px;
     width: 100%;
+    text-shadow: 1px 1px 5px rgba(0, 123, 255, 0.5); /* Mavi gölge */
 }
 
 input, select {
@@ -83,13 +72,15 @@ input, select {
     border-radius: 8px;
     border: 1px solid #ccc;
     font-size: 1rem;
-    background-color: #f4f4f9;
-    transition: border 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.8);
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+    text-shadow: 1px 1px 3px rgba(34, 193, 195, 0.5); /* Yeşil-mavi gölge */
 }
 
     input:focus, select:focus {
         border: 2px solid #3498db;
         outline: none;
+        box-shadow: 0 4px 15px rgba(0, 123, 255, 0.5); /* Mavi gölge efekti */
     }
 
 /* Butonlar */
@@ -101,10 +92,26 @@ button {
     border-radius: 25px;
     font-size: 1.2rem;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
     button:hover {
         background-color: #2980b9;
         transform: scale(1.05);
+        box-shadow: 0 4px 15px rgba(0, 123, 255, 0.5); /* Mavi ışık gölgesi */
     }
+
+/* Geçiş animasyonu arka plan */
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}

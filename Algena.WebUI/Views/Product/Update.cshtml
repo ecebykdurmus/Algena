@@ -1,44 +1,37 @@
-﻿@model ProductVM
+﻿@{
+    Layout = null;
+}
 
-<link href="~/css/productUpdate.css" rel="stylesheet" />
 
-<header>
-    <img src="~/images/AlgenaLogo.jpg" alt="Logo" height="200px" width="350px">
+@model ProductVM
 
-</header>
+<link href="~/css/Denek.css" rel="stylesheet" />
+
+@* <header>
+    <img src="~/images/AlgenaLogo.jpg" alt="Algena Logo" height="150px">
+</header> *@
 
 <div class="card-ekleme">
     <h3 class="title">Ürün Güncelle</h3>
     <form asp-action="Update" method="post">
 
         <label>Kategori :</label>
-        @* CaregoryId'den yakalayacagız *@
         <select name="CategoryId">
-            
             @foreach (CategoryDto categoryDto in (ViewBag.Categories as List<CategoryDto>))
             {
-                <option value="@categoryDto.Id">@categoryDto.CategoryName</option> 
+                <option value="@categoryDto.Id">@categoryDto.CategoryName</option>
             }
-
         </select>
-
-        <br>
 
         <label>Ürün Adı :</label>
         <input type="text" value="@Model.ProductName" name="ProductName">
-        
-        <br>
 
         <label>Stok Adeti :</label>
-        <input type="text" value="@Model.StockAmount" name="StockAmount"> 
-        
-        <br>
-        
+        <input type="text" value="@Model.StockAmount" name="StockAmount">
+
         <label>Fiyat :</label>
         <input type="text" value="@Model.Price" name="Price">
-        
-        <br>
-        
+
         <button>Güncelle</button>
 
     </form>
