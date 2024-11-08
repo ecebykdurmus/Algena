@@ -15,13 +15,13 @@ namespace Algena.Entities.Concrete
         }
         public int Id { get; set; }
         public int CustomerId { get; set; }
-        public int? SellerId { get; set; }
+        //public int? SellerId { get; set; }
+        //public System.Nullable<int> SellerId { get; set; }
         public DateTime OrderDate { get; set; }
 
         //Relational Properties
         public ICollection<OrderDetail> OrderDetails { get; set; }
         public Customer Customer { get; set; }
-        public Seller Seller { get; set; }
 
     }
 }

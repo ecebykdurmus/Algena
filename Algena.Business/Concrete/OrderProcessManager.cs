@@ -38,7 +38,7 @@ namespace Algena.Business.Concrete
                 Order order = new Order()
                 {
                     CustomerId = user.Id,
-                    SellerId = seller?.Id
+                    //SellerId = seller?.Id
                 };
 
                 

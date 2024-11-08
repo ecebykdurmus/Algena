@@ -21,7 +21,7 @@ namespace Algena.DataAccess.Concrete.EntityFrameworkCore.Mappings
             builder.HasOne(x => x.AppUser).WithOne(x => x.Seller);
 
             //1-n ilişki var.
-            builder.HasMany(x => x.Orders).WithOne(x => x.Seller).HasForeignKey(x => x.SellerId);
+            //builder.HasMany(x => x.Orders).WithOne(x => x.Seller).HasForeignKey(x => x.SellerId);
             base.Configure(builder);
 
         }

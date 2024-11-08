@@ -39,8 +39,11 @@
     <div class="basket-summary">
         <h2 class="total-price">Toplam Fiyat: @Model.TotalPrice TL</h2>
         <div class="summary-buttons">
-            @Html.ActionLink("Sepeti Sil", "RemoveBasket", null, new { @class = "btn btn-clear" })
-            @Html.ActionLink("Sepeti Onayla", "Index", "Order", new { @class = "btn btn-confirm" })
+            @Html.ActionLink("Sepeti Sil", "RemoveBasket", null, new {} , new { @class = "btn btn-clear" })
+            @Html.ActionLink("Sepeti Onayla", "Index", "Order", new {}, new { @class = "btn btn-confirm" })
+
+            @* http://localhost/Index?id=14 *@
+            @* http://localhost/Order?class=btn btn-confirm *@
         </div>
     </div>
 </div>

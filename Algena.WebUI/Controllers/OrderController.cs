@@ -20,36 +20,37 @@ namespace Algena.WebUI.Controllers
         {
             Basket basket = _basketTransaction.GetOrCreateBasket();
             int response = 0;
-            //basket.BasketItems.ForEach(async item =>
-            //{
-            //    response = await _orderProcessService.AddOrderAsync(new OrderAddDto()
-            //    {
-            //        //SellerId = item.SellerId != 0 ? item.SellerId : (int?)null,
-            //        SellerId = (int?)null,
-            //        ProductId = item.ProductId,
-            //        Quantity = item.Quantity,
-            //        UserName = User.Identity.Name
-            //    });
-            //});
 
-            foreach (var item in basket.BasketItems)
+            try
             {
-                response = await _orderProcessService.AddOrderAsync(new OrderAddDto()
+                foreach (var item in basket.BasketItems)
                 {
-                    SellerId = item.SellerId != 0 ? item.SellerId : (int?)null,
-                    ProductId = item.ProductId,
-                    Quantity = item.Quantity,
-                    UserName = User.Identity.Name
-                });
+                    response = await _orderProcessService.AddOrderAsync(new OrderAddDto()
+                    {
+                        SellerId = item.SellerId != 0 ? item.SellerId : (int?)null,
+                        ProductId = item.ProductId,
+                        Quantity = item.Quantity,
+                        UserName = User.Identity.Name
+                    });
+                }
+
+                // Sipariş başarılı ise sepeti temizle
+                if (response > 0)
+                {
+                    _basketTransaction.DeleteBasket();
+                    return RedirectToAction("Index", "Basket", new { message = "Siparişiniz oluşturuldu." });
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Basket", new { message = "Sipariş oluşturulamadı." });
+                }
             }
-
-
-            if (response > 0)
+            catch (Exception ex)
             {
-                _basketTransaction.DeleteBasket();
+                // Hata durumunda loglama yapılabilir
+                Console.WriteLine($"Hata: {ex.Message}");
+                return RedirectToAction("Index", "Basket", new { message = "Siparişiniz oluşturulurken bir sorun ile karşılaştık. Lütfen daha sonra tekrar deneyiniz." });
             }
-
-            return response > 0 ? RedirectToAction("Index", "Basket", new { message = "Siparişiniz oluşturuldu." }) : RedirectToAction("Index", "Basket", new { message = "Siparişiniz oluşturulurken bir sorun ile karşılaştık. Lütfen daha sonra tekrar deneyiniz." });
         }
 
 
